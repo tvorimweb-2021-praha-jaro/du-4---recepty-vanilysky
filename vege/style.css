@@ -43,99 +43,95 @@ body {
     --primary: white;
 }
 
-.recepty {
-    display: flex;
-    flex-direction: column;
-}
-
 .hlavni-recept {
-    background-image: url(images/salat.jpg);
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/salat.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 200px;
     width: 100%;
-    position: relative;
+    color: var(--primary);
+    padding: 0.5rem;
 }
 
-.chlebicek {
-    background-image: url(images/chlebicek.jpg);
-}
-
-.cizrna {
-    background-image: url(images/cizrna.jpg);
-}
-
-.tacos {
-    background-image: url(images/tacos.jpg);
-}
-
-.burger {
-    background-image: url(images/burger.jpg);
-}
-
-.chlebicek,
-.cizrna,
-.tacos,
-.burger {
+.recept {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 90px;
+    padding: 0.5rem;
+    border: 1px solid var(--primary);
+    color: var(--primary);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 90px;
     width: 100%;
-    position: relative;
-    border-top: 2px solid var(--primary);
 }
 
-h1 {
+
+.chlebicek {
+    background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/chlebicek.jpg);
+}
+
+.cizrna {
+    background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/cizrna.jpg);
+}
+
+.tacos {
+    background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/tacos.jpg);
+}
+
+.burger {
+    background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/burger.jpg);
+}
+
+.hlavni-recept h2 {
     font-family: Raleway, sans-serif;
     font-size: 1.75rem;
     font-weight: 800;
     color: var(--primary);
-    position: absolute;
-    bottom: 0;
-    left: 0.5rem;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-right: 5rem;
     text-shadow: 1px 1px 4px #000000;
+    padding-top: 8rem;
 }
 
-h2 {
+.recept-nazev {
     font-family: Raleway, sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
     color: var(--primary);
-    position: absolute;
-    bottom: 0;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 4px #000000
+    text-shadow: 1px 1px 4px #000000;
+    margin: 0;
+   padding-top: 3rem;
+    
 }
 
-h3 {
+a {
     font-family: ‘Source Sans Pro’, sans-serif;
     font-weight: 400;
     font-size: 0.8rem;
     color: var(--primary);
-    padding: 0.5rem;
 }
 
-.vlevo {
-    position: absolute;
-    top: 0;
+.recept-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
 }
 
-.vpravo {
-    position: absolute;
-    right: 0.5rem;
-    top: 0;
+.recept-rubrika {
+    font-weight: normal;
 }
+
 
 @media screen and (min-width: 480px) {
 
-    .hlavni-recept {
+    .recepty {
         display: flex;
+        flex-direction: column;      
+    }
+
+    .hlavni-recept {
         width: 100%;
         min-height: 250px;
     }
@@ -145,16 +141,21 @@ h3 {
         flex-wrap: wrap;
     }
 
-    .chlebicek,
     .cizrna,
+    .chlebicek,
     .tacos,
     .burger {
+        display: flex;
         flex-basis: 50%;
         min-height: 150px;
     }
 
     .cizrna {
-        order: 2;
+        order: 1;
+    }
+
+    .tacos {
+        order: 3;
     }
 
     .burger {
@@ -166,24 +167,18 @@ h3 {
         border-left: 2px solid var(--primary);
     }
 
-    h1 {
+    .recept-nazev {
+        font-size: 1.5rem;
+    }
+
+    .hlavni-recept h2 {
         font-size: 2rem;
     }
 
-    h2 {
-        font-size: 1.5rem;
-        padding-left: 1.25rem;
+    .recept-meta {
+        justify-content: space-between;
+        align-items: flex-start;
     }
-
-    .vlevo {
-        padding-left: 1.25rem;
-    }
-
-    .vpravo {
-        padding-right: 1.25rem;
-    }
-
-}
 
 @media screen and (min-width: 860px) {
 
@@ -195,7 +190,7 @@ h3 {
     .hlavni-recept {
         min-height: 400px;
         flex-basis: calc(1/3 * 100%);
-        border-right: 2px solid var(--primary);
+        border-right: 1px solid var(--primary);
     }
 
     .maly-recept {
@@ -204,14 +199,26 @@ h3 {
         flex-basis: calc(2/3 * 100%);
     }
 
-    h1 {
-        font-size: 3rem;
+    .chlebicek,
+    .tacos {
+        border-top: none;
     }
 
-    h2 {
+    .cizrna {
+        order: 4;
+    }
+
+    .burger {
+        order: 5;
+    }
+
+    .recept-nazev {
         font-size: 1.75rem;
     }
 
+    .hlavni-recept h2 {
+        font-size: 3rem;
+    }
     
 }
 
