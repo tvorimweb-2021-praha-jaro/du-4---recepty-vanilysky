@@ -46,6 +46,7 @@ body {
 .hlavni-recept {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-between;
     background-image: linear-gradient(hsla(0 0% 0% / 0.2), hsla(0 0% 0% / 0.2)), url(images/salat.jpg);
     background-size: cover;
     background-position: center;
@@ -59,6 +60,7 @@ body {
 .recept {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-between;
     min-height: 90px;
     padding: 0.5rem;
     border: 1px solid var(--primary);
@@ -92,7 +94,6 @@ body {
     font-weight: 800;
     color: var(--primary);
     text-shadow: 1px 1px 4px #000000;
-    padding-top: 8rem;
 }
 
 .recept-nazev {
@@ -102,7 +103,6 @@ body {
     color: var(--primary);
     text-shadow: 1px 1px 4px #000000;
     margin: 0;
-   padding-top: 3rem;
     
 }
 
